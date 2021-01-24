@@ -1,0 +1,33 @@
+source ~/.bash_prompt
+source ~/.aliases
+export BASH_SILENCE_DEPRECATION_WARNING=1
+alias goto='cd'
+alias back='cd ..'
+alias root='cd ~'
+alias geany='open -a "Geany" '
+alias sublime='open -a "Sublime Text"' 
+alias code='open -a "Visual Studio Code"' 
+alias cls='printf "\033c"' 
+
+
+
+g++_17() {
+	echo "C++ 17 without -fsanitize"
+	g++ -std=c++17 -Wshadow -Wall -o "$1" "$2" -O2 -Wno-unused-result
+}
+
+g++_17S() {
+	echo "C++ 17 with -fsanitize"
+	g++ -std=c++17 -Wshadow -Wall -o "$1" "$2" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+
+}
+
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+export PATH
+
+
+export PATH="$PATH:/Users/achyutsaroch/flutter/bin"
+export PATH="$PATH:/usr/local/mysql/bin"
+
